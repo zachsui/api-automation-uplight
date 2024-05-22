@@ -1,0 +1,53 @@
+
+# Example 0: Search for audio using single query parameter
+curl \
+  -H "Authorization: Bearer <Openverse API token>" \
+  "https://api.openverse.org/v1/audio/?q=test"
+
+
+# Example 1: Search for audio using multiple query parameters
+curl \
+  -H "Authorization: Bearer <Openverse API token>" \
+  "https://api.openverse.org/v1/audio/?q=test&license=pdm,by&categories=illustration&page_size=1&page=1"
+
+
+# Example 2: Search for audio that is an exact match of Giacomo Puccini
+curl \
+  -H "Authorization: Bearer <Openverse API token>" \
+  "https://api.openverse.org/v1/audio/?q=%22Giacomo%20Puccini%22"
+
+
+# Example 3: Search for audio related to both dog and cat
+curl \
+  -H "Authorization: Bearer <Openverse API token>" \
+  "https://api.openverse.org/v1/audio/?q=dog+cat"
+
+
+# Example 4: Search for audio related to dog or cat, but not necessarily both
+curl \
+  -H "Authorization: Bearer <Openverse API token>" \
+  "https://api.openverse.org/v1/audio/?q=dog|cat"
+
+
+# Example 5: Search for audio related to dog but won't include results related to 'pug'
+curl \
+  -H "Authorization: Bearer <Openverse API token>" \
+  "https://api.openverse.org/v1/audio/?q=dog -pug"
+
+
+# Example 6: Search for audio matching anything with the prefix 'net'
+curl \
+  -H "Authorization: Bearer <Openverse API token>" \
+  "https://api.openverse.org/v1/audio/?q=net*"
+
+
+# Example 7: Search for audio matching dogs that are either corgis or labrador
+curl \
+  -H "Authorization: Bearer <Openverse API token>" \
+  "https://api.openverse.org/v1/audio/?q=dogs + (corgis | labrador)"
+
+
+# Example 8: Search for audio matching strings close to the term theater with a difference of one character
+curl \
+  -H "Authorization: Bearer <Openverse API token>" \
+  "https://api.openverse.org/v1/audio/?q=theatre~1"
