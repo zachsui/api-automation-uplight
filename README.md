@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Welcome to the Openverse API Test Automation Framework. This framework is designed to facilitate automated testing of the Openverse API using modern and efficient tools and libraries. It is built with a focus on maintainability, scalability, and ease of use. 
+Welcome to the Openverse API Test Automation Framework. This framework is designed to facilitate automated testing of the [Openverse API](https://api.openverse.engineering/v1/) using modern and efficient tools and libraries. It is built with a focus on maintainability, scalability, and ease of use. 
 
 ## Technologies Used
 
@@ -11,6 +11,16 @@ Welcome to the Openverse API Test Automation Framework. This framework is design
 - **JUnit**: A testing framework for writing and running tests.
 - **Rest Assured**: A Java library for testing and validating RESTful APIs.
 - **MailSlurp**: An email testing tool used for email validation and automation.
+
+
+### API Tests Structure
+
+Under package org.uplight.qe test folders, we have following api tests
+- BaseSetup, this is base test setup to prepare the test data and tokens
+- AuthRegisterTest is test collection of end point: **POST /v1/auth_tokens/register/**
+- AuthTokenTest is test collection of end point: **POST /v1/auth_tokens/token/** 
+- AudioSearchTest is test collection of end point: **GET /v1/audio/**
+- AudioStatsTest is test collectiion of end point: **GET /v1/audio/stats/**
 
 ## Features
 
@@ -31,14 +41,6 @@ Ensure you have the following installed on your development machine:
 - Maven
 - An IDE of your choice (IntelliJ IDEA, Eclipse, etc.)
 
-### API Tests Structure
-
-Under package org.uplight.qe test folders, we have following api tests
-- BaseSetup, this is base test setup to prepare the test data and tokens
-- AuthRegisterTest is test collection of end point: **POST /v1/auth_tokens/register/**
-- AuthTokenTest is test collection of end point: **POST /v1/auth_tokens/token/** 
-- AudioSearchTest is test collection of end point: **GET /v1/audio/**
-- AudioStatsTest is test collectiion of end point: **GET /v1/audio/stats/**
 
 ### Bonus point
 - Inside of AudioSearchTest, we have uti function called **isValidUUID4()** and related assertions to test each id fetched from the http response is a valid UUID4 string.
